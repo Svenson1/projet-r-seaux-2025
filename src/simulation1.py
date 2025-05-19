@@ -25,7 +25,7 @@ for link in links_data:
     router1 = routers[id1]
     router2 = routers[id2]
 
-    temp_link = Link(router1, router2, link["trans_speed"], link["prop_speed"], link["dist"], link["bandwidth"])
+    temp_link = Link(router1, router2, link["transmission_speed"], link["propagation_speed"], link["distance"], link["cost"])
 
     # Stocker les liens dans un dictionnaire avec les IDs triés pour éviter les doublons (1,2) == (2,1)
     links[tuple(sorted((id1, id2)))] = temp_link
