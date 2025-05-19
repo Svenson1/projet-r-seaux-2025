@@ -9,9 +9,9 @@ trans_speed = 1e19  # bps
 dist = 1e3  # m
 
 #routeur :
-A = Router(1)
-B = Router(2)
-C = Router(3)
+A = Router("A")
+B = Router("B")
+C = Router("C")
 
 #lien entre les routeurs
 AB = Link(A, B, trans_speed, prop_speed, dist, 7)
@@ -29,3 +29,5 @@ C.add_neighbor(B, AC)
 A.send_vector_to_neighbors(simulator, 0)
 
 simulator.run()
+for router in [A, B, C]:
+    router.print_routing_table()
