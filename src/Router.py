@@ -3,9 +3,10 @@ class Router:
         self.router_id = router_id
         self.neighbors = {} # Dictionaire des routeurs voisins (sous forme router: link)
         self.routing_table = {} # table de routage contenant la destination: le cout, le prochain saut
+        self.routing_table[router_id] = (0, router_id) # la table de routage contient le cout 0 pour lui même et le prochain saut est lui même
 
     def add_neighbor(self, neighbor_router, link):
-        self.neighbors[neighbor_router] = link
+        self.neighbors[neighbor_router.router_id] = link
         self.routing_table[neighbor_router.router_id] = (link.cost, neighbor_router.router_id) #lorsque l'on ajoute un voisi,
         #on met à jour la table de routage avec le cout et le prochain saut (comme on vient de l'ajouet, le cout minimum est le lien)
 
