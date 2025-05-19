@@ -9,7 +9,7 @@ class Link:
 
     def delay(self, packet_size):
         """Calcul le temps de transmission d'un paquet sur le lien"""
-        transmission_delay = packet_size / self.bandwidth
+        transmission_delay = packet_size * 8 / self.bandwidth
         propagation_delay = self.distance / self.propagation_speed
         return transmission_delay + propagation_delay
 

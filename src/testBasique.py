@@ -24,7 +24,7 @@ B.add_neighbor(A, AB)
 C.add_neighbor(A, AC)
 
 # Envoi du vecteur de distance
-A.send_vector_to_neighbors(simulator, 0)
+A.send_packet_to_neighbors(simulator, 0)
 
 simulator.run()
 for router in [A, B, C]:
