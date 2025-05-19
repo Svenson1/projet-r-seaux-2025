@@ -4,7 +4,7 @@ from topology_loader import load_topology
 def start_simulation(_routers, _simulator):
     # Envoi du vecteur de distance initial
     for r in _routers.values():
-        r.send_packet_to_neighbors(_simulator, 0)
+        r.send_distance_vector(_simulator, 0)
 
 
 if __name__ == '__main__':
