@@ -44,7 +44,7 @@ class Router:
             new_cost = cost_to_neighbor + costToDestFromSender
             current_entry = self.routing_table.get(dest_id)
             print(f"Router {self.router_id} checking destination {dest_id}: current cost {current_entry}, new cost {new_cost}")
-            if current_entry[1] == sender_router.router_id and new_cost > current_entry[0]:
+            #if current_entry[1] == sender_router.router_id and new_cost > current_entry[0]:
                 #signifie que l'on a eu un changement de cout sur le lien
 
 
