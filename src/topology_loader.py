@@ -6,8 +6,8 @@ from Simulator import Simulator
 
 def update_cost_event(_link, _new_cost, _current_time, _simulator):
     _link.update_cost(_new_cost)
-    _link.router1.send_packet_to_neighbors(_simulator, _current_time)
-    _link.router2.send_packet_to_neighbors(_simulator, _current_time)
+    _link.router1.update_link_cost(_link.router2, _new_cost, _simulator, _current_time)
+    _link.router2.update_link_cost(_link.router1, _new_cost, _simulator, _current_time)
 
 
 def load_topology(topology_file):
