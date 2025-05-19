@@ -53,9 +53,9 @@
   "events": [
       {
           "type": " cost_change " ,
-          "time": 1 ,
-          "link": [ 1 , 1 ] ,
-          "new_cost": 1
+          "time": 600 ,
+          "link": [ 1 , 2 ] ,
+          "new_cost": 15
       }
 
   ]

@@ -1,12 +1,14 @@
 from Simulator import Simulator
 from Router import Router
 from Link import Link
-from src.Simulator import SimulatorEvent
+from Simulator import SimulatorEvent
 from topology_loader import load_topology
 
 simulator = Simulator()
 
-links_data, events_data = load_topology("topology1.json")
+#links_data, events_data = load_topology("topology1.json")
+#links_data, events_data = load_topology("impactOfDelay.json")
+links_data, events_data = load_topology("count_to_infinity.json")
 
 routers = {}
 links = {}
@@ -38,6 +40,11 @@ def update_cost(_link, new_cost, current_time):
     _link.router1.send_packet_to_neighbors(simulator, current_time)
     _link.router2.send_packet_to_neighbors(simulator, current_time)
 
+def start_simulation():
+    # Envoi du vecteur de distance initial
+    for r in routers.values():
+        r.send_packet_to_neighbors(simulator, 0)
+
 
 #création des events
 for event in events_data:
@@ -45,7 +52,16 @@ for event in events_data:
     link_key = tuple(sorted((id1, id2)))
     if link_key in links:
         link1 = links[link_key]
-        simulator_event = SimulatorEvent(1, update_cost(link1, event["new_cost"], event["time"]))
-        simulator.add_event(event["time"], lambda: simulator_event)
+        simulator.add_event(
+            event["time"],
+            lambda l=link1, c=event["new_cost"], t=event["time"]: update_cost(l, c, t)
+        )
 
+
+start_simulation()
 simulator.run()
+
+print("\n===== Final Routing Tables =====")
+for router in sorted(routers.values(), key=lambda r: r.router_id):
+    router.print_routing_table()
+    print()
