@@ -12,9 +12,8 @@ if __name__ == '__main__':
     print("1. Validation de votre implémentation")
     print("2. Impact des délais")
     print("3. Comptage à l’infini")
-    print("4. Solution du problème de comptage à l’infini")
     choice = input("choose your topology: \n")
-    file = {"1":"simple_case.json", "2":"impact_of_delay.json", "3": "count_to_infinity.json", "4": "topology4.json"}
+    file = {"1":"simple_case.json", "2":"impact_of_delay.json", "3": "count_to_infinity.json"}
 
     simulator, routers, links = load_topology(file[choice])
     start_simulation(routers, simulator)
