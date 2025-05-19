@@ -1,0 +1,62 @@
+{
+  "links": [
+      {
+          "propagation_speed" : 1,
+          "transmission_speed": 1,
+          "distance": 1 ,
+          "cost": 1 ,
+          "endpoints": [ 1 , 2 ]
+      },
+      {
+          "propagation_speed" : 1,
+          "transmission_speed": 1,
+          "distance": 1 ,
+          "cost": 1 ,
+          "endpoints": [ 2 , 3 ]
+      },
+      {
+          "propagation_speed" : 1,
+          "transmission_speed": 1,
+          "distance": 1 ,
+          "cost": 1 ,
+          "endpoints": [ 3 , 4 ]
+      },
+      {
+          "propagation_speed" : 1,
+          "transmission_speed": 1,
+          "distance": 1 ,
+          "cost": 1 ,
+          "endpoints": [ 4 , 5 ]
+      },
+      {
+          "propagation_speed" : 1,
+          "transmission_speed": 1,
+          "distance": 1 ,
+          "cost": 1 ,
+          "endpoints": [ 2 , 5 ]
+      },
+      {
+          "propagation_speed" : 1,
+          "transmission_speed": 1,
+          "distance": 1 ,
+          "cost": 1 ,
+          "endpoints": [ 3 , 1 ]
+      },
+      {
+          "propagation_speed" : 1,
+          "transmission_speed": 1,
+          "distance": 1 ,
+          "cost": 1 ,
+          "endpoints": [ 1 , 4 ]
+      }
+  ] ,
+  "events": [
+      {
+          "type": " cost_change " ,
+          "time": 1 ,
+          "link": [ 1 , 1 ] ,
+          "new_cost": 1
+      }
+
+  ]
+}
