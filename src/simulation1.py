@@ -47,3 +47,5 @@ for event in events_data:
         link1 = links[link_key]
         simulator_event = SimulatorEvent(1, update_cost(link1, event["new_cost"], event["time"]))
         simulator.add_event(event["time"], lambda: simulator_event)
+
+simulator.run()
