@@ -9,6 +9,10 @@ def update_cost_event(_link, _new_cost, _current_time, _simulator):
     _link.router1.update_link_cost(_link.router2, _new_cost, _simulator, _current_time)
     _link.router2.update_link_cost(_link.router1, _new_cost, _simulator, _current_time)
 
+def parse_cost(_cost):
+    if isinstance(_cost, str) and _cost.lower() in ("inf", "infinity", "+inf"):
+        return float("inf")
+    return _cost
 
 def load_topology(topology_file):
     with open(topology_file, 'r') as f:
@@ -51,7 +55,7 @@ def load_topology(topology_file):
                 link1 = links[link_key]
                 simulator.add_event(
                     event["time"],
-                    lambda l=link1, c=event["new_cost"], t=event["time"]: update_cost_event(l, c, t, simulator)
+                    lambda l=link1, c=parse_cost(event["new_cost"]), t=event["time"]: update_cost_event(l, c, t, simulator)
                 )
 
 

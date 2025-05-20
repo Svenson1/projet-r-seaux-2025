@@ -10,7 +10,7 @@
       {
           "propagation_speed" : 5e6,
           "transmission_speed": 10000,
-          "distance": 4e3 ,
+          "distance": 1e3 ,
           "cost": 3 ,
           "endpoints": [ 2 , 3 ]
       },
@@ -24,21 +24,21 @@
       {
           "propagation_speed" : 5e6,
           "transmission_speed": 12000,
-          "distance": 7e3 ,
+          "distance": 1e3 ,
           "cost": 5 ,
           "endpoints": [ 4 , 5 ]
       },
       {
           "propagation_speed" : 5e6,
           "transmission_speed": 7000,
-          "distance": 5e3 ,
+          "distance": 1e3 ,
           "cost": 2 ,
           "endpoints": [ 2 , 5 ]
       },
       {
           "propagation_speed" : 5e6,
           "transmission_speed": 6000,
-          "distance": 2e3 ,
+          "distance": 1e3 ,
           "cost": 1 ,
           "endpoints": [ 3 , 1 ]
       },
@@ -51,12 +51,5 @@
       }
   ] ,
   "events": [
-      {
-          "type": " cost_change " ,
-          "time": 600 ,
-          "link": [ 1 , 2 ] ,
-          "new_cost": 15
-      }
-
   ]
 }
