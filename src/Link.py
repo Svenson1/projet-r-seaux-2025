@@ -16,12 +16,3 @@ class Link:
     def update_cost(self, new_cost):
         """Met à jour le coût du lien"""
         self.cost = new_cost
-
-    def other_side(self, router):
-        """Retourne l'autre routeur du lien"""
-        if router == self.router1:
-            return self.router2
-        elif router == self.router2:
-            return self.router1
-        else:
-            raise ValueError("Router not connected to this link")

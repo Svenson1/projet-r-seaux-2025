@@ -90,6 +90,7 @@ class Router:
 
     #methode permettant d'afficher la table de routage du routeur
     def print_routing_table(self):
-        print(f"Routing table for router {self.router_id}:")
+        print(f"Router {self.router_id} :")
+        print("Dest   Cost   Next Hop")
         for dest, (cost, next_hop) in self.routing_table.items():
-            print(f"  {dest} → cost: {cost}, via: {next_hop}")
+            print(f"  {dest}     {cost}      {next_hop}")
